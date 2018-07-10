@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.ljw.hibernate.domain2.Order" table="tb_order">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		
+		<!-- 配置关系 name：类中的属性 class:这个属性对应的完整包路径 column:这个属性在当前对象对应表中的外键 -->
+		<many-to-one name="customer" class="com.ljw.hibernate.domain2.Customer2" column="cid"></many-to-one>
+	</class>
+
+
+
+
+</hibernate-mapping>    

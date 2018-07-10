@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    
+<hibernate-mapping>
+	<class name="com.ljw.hibernate.domain2.Customer2" table="tb_customer">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		<set name="orders" cascade="save-update,delete" inverse="true">
+			<key column="cid"></key>
+			<one-to-many class="com.ljw.hibernate.domain2.Order"/>
+		</set>
+	</class>
+
+
+
+</hibernate-mapping>
